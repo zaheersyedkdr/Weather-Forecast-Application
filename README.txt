@@ -1,4 +1,4 @@
-This repository is a responsive web page displaying weather conditions as well as hourly and daily forecasts. It has dynamic icons that change according to weather conditions. All units of weather parameters are SI units.
+This repository is a responsive web page displaying weather conditions as well as hourly and daily forecasts. It has dynamic icons that change according to weather conditions. All units of weather parameters are SI units. Tempearture can be toggled between celsius and fahrenheit.
 
 This application uses HTML geolocation to obtain position coordinates.
 
@@ -19,7 +19,8 @@ Javascript :
 3. Moment.js - used for time convertion from of a UNIX timestamp obtained from Dark Sky API.
 
 Note:
-For better accuracy of location turn on GPS and wifi on your devices.
+1. For better accuracy of location turn on GPS and wifi on your devices.
+2. The reload button in the application is set to force reload from server rather than cache.
 
 A Pen created at CodePen.io. You can find this one at  http://codepen.io/zaheersyedkdr/pen/rwowKJ .
 
