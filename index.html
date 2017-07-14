@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Local Weather App by Zaheer</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.css'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div class="container-fluid">
+  <div id="headertext" class="text-center">
+    Weather Forcast by Zaheer 
+    <button id="ref" class="btn" style="margin-left:40px;background-color:white"><i class="wi wi-refresh" style="font-size:30px"></i></button>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-sm-6  col-lg-6 well well-lg" id="leftwell">
+      <ul id="leftWellList" class="list-group">
+        <li class="list-group-item"><p>Approximate Location :(Switch on GPS and Wifi for better accuracy) </p><h4 id="c1">...</h4></li>
+        <li class="list-group-item"> <p>Latitude :</p><h4 id="c2">...</h4> </li>
+        <li class="list-group-item"> <p>Longitude :</p><h4 id="c3">...</h4> </li>
+        <li class="list-group-item"> <p>Time Zone :</p><h4 id="c4">...</h4> </li>
+        <li class="list-group-item"> <p>Time (current forecast time) :</p><h4 id="c5">...</h4> </li>
+      </ul>
+    </div>
+    <div class="col-md-6 col-sm-6  col-lg-6 well well-lg" id="rightwell">
+      <ul class="list-group" id="rightWellList">
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6">
+              <p>Weather Summary : </p>
+              <h4 id="d1">...</h4>
+                
+              </div>
+            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6">
+              <i id="weathicon" class="" style="font-size:40px;margin-top:15px"></i>
+            </div>
+              
+            </div></li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6">
+              <p>Temperature: </p>
+              <h4 id="d2">...</h4>
+                
+              </div>
+            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6">
+              <button id="tempbtn" class="btn" style="background-color:#e6e6ff"><i id="tempicon" class="wi wi-celsius" style="font-size:40px;margin-top:15px"></i></button>
+            
+            </div>
+              
+            </div></li>
+        <li class="list-group-item"> <p>Wind Speed :</p><h4 id="d3">...</h4> </li>
+        <li class="list-group-item"> <p>Pressure :</p><h4 id="d4">...</h4> </li>
+        <li class="list-group-item"> <p>Humidity :</p><h4 id="d5">...</h4> </li>
+      </ul>
+    </div>
+  </div>
+  <div id="hourlyupdates" class="well well-lg">
+    <h4>Hourly Forecast</h4>
+    <h5 id="hourbasedsummary">Summary</h5>
+    <div class="row">
+      <div class="col-md-4 zb col-sm-4 col-lg-4 well well-sm text-center">
+        <h4 id="hour1">...</h4>
+        <h5 id="temphour1">Min/Max</h5>
+        <i id="iconhour1" class="wi wi-cloudy" style="font-size:40px"></i>
+        
+      </div>
+      <div class="col-md-2 zb col-lg-2 col-sm-2 well well-sm text-center">
+        <h4 id="hour2">...</h4>
+        <h5 id="temphour2">Min/Max</h5>
+        <i id="iconhour2" class="wi wi-cloudy" style="font-size:40px"></i>
+      </div>
+      <div class="col-md-2 zb col-lg-2 col-sm-2 well well-sm text-center">
+        <h4 id="hour3">...</h4>
+        <h5 id="temphour3" >Min/Max</h5>
+        <i id="iconhour3" class="wi wi-cloudy" style="font-size:40px"></i>
+      </div>
+      <div class="col-md-2 zb col-lg-2 col-sm-2 well well-sm text-center">
+       <h4 id="hour4">...</h4>
+        <h5 id="temphour4" >Min/Max</h5>
+        <i id="iconhour4" class="wi wi-cloudy text-center" style="font-size:40px"></i>
+      </div>
+      <div class="col-md-2 zb col-lg-2 col-sm-2 well well-sm text-center">
+        <h4 id="hour5">...</h4>
+        <h5 id="temphour5">Min/Max</h5>
+        <i id="iconhour5" class="wi wi-cloudy" style="font-size:40px"></i>
+      </div>
+    </div>
+  </div>
+  <div id="dailyupdates" class="well well-lg">
+    <h4>Daily Forecast</h4>
+    <h5 id="daybasedsummary">Summary</h5>
+    <div class="row ">
+      <div class="col-md-4  z col-lg-4 well well-sm text-center">
+        <h4 id="day1">Date</h4>
+        <h5 id="tempday1">Min/Max</h5>
+        <h5 id="days1">sum</h5>
+        <i id="iconday1" class="wi wi-cloudy" style="font-size:40px"></i>
+        
+      </div>
+      <div class="col-md-2 z col-lg-2  well well-sm text-center">
+        <h4 id="day2">Date</h4>
+        <h5 id="tempday2">Min/Max</h5>
+        <h5 id="days2">sum</h5>
+        <i id="iconday2" class="wi wi-cloudy" style="font-size:40px"></i>
+      </div>
+      <div class="col-md-2 z col-lg-2  well well-sm text-center">
+        <h4 id="day3">Date</h4>
+        <h5 id="tempday3" >Min/Max</h5>
+        <h5 id="days3">sum</h5>
+        <i id="iconday3" class="wi wi-cloudy" style="font-size:40px"></i>
+      </div>
+      <div class="col-md-2 z col-lg-2  well well-sm text-center">
+       <h4 id="day4">Date</h4>
+        <h5 id="tempday4" >Min/Max</h5>
+        <h5 id="days4">sum</h5>
+        <i id="iconday4" class="wi wi-cloudy text-center" style="font-size:40px"></i>
+      </div>
+      <div class="col-md-2 z col-lg-2  well well-sm text-center">
+        <h4 id="day5">Date</h4>
+        <h5 id="tempday5">Min/Max</h5>
+        <h5 id="days5">sum</h5>
+        <i id="iconday5" class="wi wi-cloudy" style="font-size:40px"></i>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p><i class="fa fa-copyright"></i> copyrights reserved -<a href="mailto:zaheersyedkdr@gmail.com" target="blank">Syed Zaheer Basha</a><a href="https://darksky.net/poweredby/" target="blank"><img src="https://darksky.net/dev/img/attribution/poweredby.png" alt="Powered by Dark Sky" width="90px" align="right"></a></p>
+    
+  </footer>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+body{
+ color: #000080;
+}
+
+.list-group-item{
+  border-style: hidden;
+  background-color:  ;
+}
+
+#headertext{
+  font-size: 1.5em;
+  font-weight : bold; 
+  margin-top: 20px;
+  
+}
+.well{
+  margin-top: 20px;
+  border-style: dotted;
+  border-color: black;
+  background-color: white;
+}
+
+#leftwell{
+  height : 490px;
+}
+#rightwell{
+  height : 490px;
+}
+.zb{
+  height : 160px;
+}
+.z {
+  height : 190px;
+  }
